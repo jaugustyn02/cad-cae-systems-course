@@ -1,0 +1,37 @@
+# MATLAB specific files
+*.asv          # Autosave files
+*.m~           # MATLAB backup files
+*.mex*         # Compiled MATLAB binary files (platform-specific)
+*.mltbx        # MATLAB Toolbox files
+*.mat          # MATLAB binary data files
+*.fig          # MATLAB figure files
+*.slx          # Simulink model files
+*.mdl          # Older Simulink model files
+*.p            # Protected MATLAB files (compiled)
+*.xpc          # Real-time target files
+*.mdlp         # Simulink protected model files
+*.slxp         # Simulink project files
+
+# MATLAB project folder
+*.prj          # MATLAB project files
+*.tmf          # Simulink test harness files
+*.autosave     # Autosave project files
+
+# MATLAB Code generation folder
+/codegen/
+slprj/
+
+# Word documents
+*.doc
+*.docx
+*.dot
+*.dotx
+
+# Operating system-specific files
+.DS_Store      # macOS Finder files
+Thumbs.db      # Windows thumbnail cache files
+
+# Logs and temporary files
+*.log
+*.bak
+*.tmp
