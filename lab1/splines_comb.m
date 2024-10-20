@@ -17,13 +17,6 @@ end
 % computating number of basis functions
 nr = compute_nr_basis_functions(knot_vector,p);
 
-% validate coeff vector
-coeff_vector_len = size(coeff_vector, 2);
-if (coeff_vector_len ~= nr)
-    fprintf("Coefficient vector lenght must equals %d!\n", nr)
-    return
-end
-
 % beginning of drawing range
 x_begin = knot_vector(1);
 % end of drawing range
@@ -35,6 +28,13 @@ x_begin = knot_vector(1);
 % end of drawing range
 x_end = knot_vector(size(knot_vector,2));
 x = mesh(x_begin, x_end);
+
+% validate coeff vector
+coeff_vector_len = size(coeff_vector, 2);
+if (coeff_vector_len ~= nr)
+    fprintf("Coefficient vector lenght must equals %d!\n", nr)
+    return
+end
 
 %load image
 figure('Position',[300 200 900 400], 'Name','Plot with Image');
@@ -53,14 +53,14 @@ plot(x, splines, 'LineWidth', 3);
 hold off
 ylim([0 3])
 xlim([0 100])
-saveas(gcf, "plot_img.png")
+% saveas(gcf, "plot_img.png")
 
 % plot without image
 figure('Position',[300 200 900 400],'Name','Raw Plot');
 plot(x, splines, 'LineWidth', 3);
 ylim([0 3])
 xlim([0 100])
-saveas(gcf, "plot.png")
+% saveas(gcf, "plot.png")
 
 % Subroutine computing order of polynomials
 function p=compute_p(knot_vector)
