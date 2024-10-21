@@ -35,3 +35,7 @@ Thumbs.db      # Windows thumbnail cache files
 *.log
 *.bak
 *.tmp
+
+# my generated data
+data/
+.mat

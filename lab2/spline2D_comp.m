@@ -1,5 +1,6 @@
+
 function spline2D_comp()
-data = load('101x101.mat');
+data = load('data/21x25.mat');
 spline2Duniform(data.knot_vectorx, data.knot_vectory, data.coeffs);
 return
 
@@ -97,16 +98,18 @@ for i=1:nrx
   vx=compute_spline(knot_vectorx,px,i,X);
   for j=1:nry
     vy=compute_spline(knot_vectory,py,j,Y);
-    M = M + coeffs(nry-j+1, i) * vx .* vy;
+    M = M + coeffs(j, i) * vx .* vy;
   end
 end
 
 figure('Name','Maze 3D view');
 surf(X,Y, M);
+set(gca, "YDir", "reverse");
 
 figure('Name','Maze 3D view cropped');
 surf(X,Y, M);
 zlim([0.7, 1])
+set(gca, "YDir", "reverse");
 
 % Code modifications end
 
